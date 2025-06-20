@@ -34,4 +34,16 @@ public class Cambio {
     public void setMonedaSeleccionada(String monedaSeleccionada) {
         this.monedaSeleccionada = monedaSeleccionada;
     }
+
+    public double convertir (String monedaOrigen, String monedaDestino, double cantidad) {
+        double tasaOrigen = conversiones.get(monedaOrigen);
+        double tasaDestino = conversiones.get(monedaDestino);
+
+        //Convertimos la cantidad a USD (base), luego a destino
+        double cantidadEnUSD = cantidad / tasaOrigen;
+        double resultado = cantidadEnUSD * tasaDestino;
+
+        return resultado;
+
+    }
 }
