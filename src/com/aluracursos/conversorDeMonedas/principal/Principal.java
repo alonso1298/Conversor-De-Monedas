@@ -1,5 +1,8 @@
 package com.aluracursos.conversorDeMonedas.principal;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -10,6 +13,8 @@ import java.net.http.HttpResponse;
 public class Principal {
     public static void main(String[] args) {
         //Scanner lectura = new Scanner(System.in);
+
+        Gson gson = new GsonBuilder();
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
