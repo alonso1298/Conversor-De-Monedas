@@ -1,5 +1,6 @@
 package com.aluracursos.conversorDeMonedas.principal;
 
+import com.aluracursos.conversorDeMonedas.modelos.CambioRate;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -14,7 +15,9 @@ public class Principal {
     public static void main(String[] args) {
         //Scanner lectura = new Scanner(System.in);
 
-        Gson gson = new GsonBuilder();
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -25,7 +28,12 @@ public class Principal {
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
             System.out.println("Respuesta JSON:");
-            System.out.println(response.body());
+            String json = response.body();
+            System.out.println(json);
+
+            CambioRate miCambio = gson.fromJson(json,CambioRate.class);
+            System.out.println(miCambio);
+
         } catch (IOException | InterruptedException e) {
             System.out.println("Ocurrió un error al hacer la solicitud: " + e.getMessage());
         }
