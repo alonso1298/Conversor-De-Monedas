@@ -21,3 +21,7 @@ Este proyecto es una aplicación de consola escrita en Java que permite converti
 
 ## 🧭 Cómo usarlo
 	1.	Clona el repositorio:
+bash ```
+git clone https://github.com/alonso1298/Conversor-De-Monedas.git
+cd Conversor-De-Monedas
+```
