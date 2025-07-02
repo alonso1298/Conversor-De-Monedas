@@ -21,11 +21,11 @@ public class Principal {
                 Sea bienvenido/a al Conversor De Monedas  :]
                 
                 1) Dollar =>> Peso Mexicano
-                2) Peso Mexicano a Dolar
+                2) Peso Mexicano =>> Dolar
                 3) Dollar =>> Peso Argentino
-                4) Peso Argentino a Dollar
+                4) Peso Argentino =>> Dollar
                 5) Dollar =>> Peso Colombiano
-                6) Peso Colombiano a Dollar
+                6) Peso Colombiano =>> Dollar
                 7) Mostar ultima la ultima tasa de actualización
                 8) Mostrar la siguiente tasa de actualización
                 9) Salir
