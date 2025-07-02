@@ -59,13 +59,19 @@ public class Principal {
             System.out.println(bienvenida);
             int opcion = lectura.nextInt();
 
-            System.out.print("Ingrese la cantidad a convertir: ");
-            double cantidad = lectura.nextDouble();
-
-            if(opcion == 9){
+            if(opcion == 7){
+                System.out.println(tasa.getUltimaActualizacion());
+                break;
+            } else if (opcion == 8) {
+                System.out.println(tasa.getSiguienteActualizacion());
+                break;
+            } else if (opcion == 9) {
                 System.out.println("Gracias por usar el conversor. ");
                 break;
             }
+
+            System.out.print("Ingrese la cantidad a convertir: ");
+            double cantidad = lectura.nextDouble();
 
             switch (opcion){
                 case 1 -> {
@@ -92,10 +98,6 @@ public class Principal {
                     double resultado = tasa.convertir("COP", "USD", cantidad);
                     System.out.printf("%.2f COP = %.2f USD%n", cantidad, resultado);
                 }
-                case 7 -> System.out.println(tasa.getUltimaActualizacion());
-
-                case 8 -> System.out.println(tasa.getSiguienteActualizacion());
-
                 default -> System.out.println("Opcion no valida");
             }
         }
