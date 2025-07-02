@@ -10,6 +10,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Principal {
@@ -56,9 +58,21 @@ public class Principal {
         while (true){
             System.out.println(bienvenida);
             int opcion = lectura.nextInt();
+
+            System.out.print("Ingrese la cantidad a convertir: ");
+            double cantidad = lectura.nextDouble();
+
+            if(opcion == 7){
+                System.out.println("Gracias por usar el conversor. ");
+                break;
+            }
+
             switch (opcion){
                 case 1:
+                    double resultado = convertir.convertir("USD", "MXN", cantidad);
+                    System.out.printf("%.2f USD = %.2f MXN%n", cantidad, resultado);
 
+            }
         }
 
     }
