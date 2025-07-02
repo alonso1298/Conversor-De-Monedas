@@ -1,5 +1,6 @@
 package com.aluracursos.conversorDeMonedas.principal;
 
+import com.aluracursos.conversorDeMonedas.modelos.Cambio;
 import com.aluracursos.conversorDeMonedas.modelos.CambioRate;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,18 +15,19 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner lectura = new Scanner(System.in);
+        Cambio convertir = null;
         String bienvenida = """
                 ********************************************
                 Sea bienvenido/a al Conversor De Monedas  :]
                 
-                1) Dolar =>> Peso Mexicano
+                1) Dollar =>> Peso Mexicano
                 2) Peso Mexicano a Dolar
-                3) Dolar =>> Peso Argentino
-                4) Peso Argentino a Dolar
-                5) Dolar =>> Peso Colombiano
-                6) Peso Colombiano a Dolar
+                3) Dollar =>> Peso Argentino
+                4) Peso Argentino a Dollar
+                5) Dollar =>> Peso Colombiano
+                6) Peso Colombiano a Dollar
                 7) Salir
-                Elija una opcion valida: 
+                Elija una opción valida: 
                 *********************************************
                 """;
 
@@ -43,10 +45,9 @@ public class Principal {
 
             System.out.println("Respuesta JSON:");
             String json = response.body();
-            System.out.println(json);
 
             CambioRate miCambio = gson.fromJson(json,CambioRate.class);
-            System.out.println(miCambio);
+            convertir = new Cambio(miCambio);
 
         } catch (IOException | InterruptedException e) {
             System.out.println("Ocurrió un error al hacer la solicitud: " + e.getMessage());
@@ -54,7 +55,10 @@ public class Principal {
 
         while (true){
             System.out.println(bienvenida);
-            lectura.nextInt();
+            int opcion = lectura.nextInt();
+            switch (opcion){
+                case 1:
+
         }
 
     }

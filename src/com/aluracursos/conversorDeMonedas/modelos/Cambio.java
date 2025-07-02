@@ -8,11 +8,11 @@ public class Cambio {
     private String monedaSeleccionada;
     private Map<String, Double> conversiones;
 
-    public Cambio(CambioRate miCmabio){
-        this.ultimaActualizacion = miCmabio.time_last_update_utc();
-        this.siguienteActualizacion = miCmabio.time_next_update_utc();
-        this.monedaSeleccionada = miCmabio.base_code();
-        this.conversiones = miCmabio.conversion_rates();
+    public Cambio(CambioRate miCamabio){
+        this.ultimaActualizacion = miCamabio.time_last_update_utc();
+        this.siguienteActualizacion = miCamabio.time_next_update_utc();
+        this.monedaSeleccionada = miCamabio.base_code();
+        this.conversiones = miCamabio.conversion_rates();
     }
 
     public String getUltimaActualizacion() {
