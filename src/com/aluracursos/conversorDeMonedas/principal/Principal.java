@@ -26,8 +26,8 @@ public class Principal {
                 4) Peso Argentino =>> Dollar
                 5) Dollar =>> Peso Colombiano
                 6) Peso Colombiano =>> Dollar
-                7) Mostar ultima la ultima tasa de actualización
-                8) Mostrar la siguiente tasa de actualización
+                7) Mostar ultima la ultima tasa de actualización.
+                8) Mostrar la siguiente tasa de actualización.
                 9) Salir
                 Elija una opción valida:
                 *********************************************
