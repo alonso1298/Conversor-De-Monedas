@@ -9,11 +9,25 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-//import java.util.Scanner;
+import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        //Scanner lectura = new Scanner(System.in);
+        Scanner lectura = new Scanner(System.in);
+        String bienvenida = """
+                ********************************************
+                Sea bienvenido/a al Conversor De Monedas  :]
+                
+                1) Dolar =>> Peso Mexicano
+                2) Peso Mexicano a Dolar
+                3) Dolar =>> Peso Argentino
+                4) Peso Argentino a Dolar
+                5) Dolar =>> Peso Colombiano
+                6) Peso Colombiano a Dolar
+                7) Salir
+                Elija una opcion valida: 
+                *********************************************
+                """;
 
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
@@ -36,6 +50,11 @@ public class Principal {
 
         } catch (IOException | InterruptedException e) {
             System.out.println("Ocurrió un error al hacer la solicitud: " + e.getMessage());
+        }
+
+        while (true){
+            System.out.println(bienvenida);
+            lectura.nextInt();
         }
 
     }
